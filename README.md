@@ -64,5 +64,17 @@ npm install
 npm run build
 ```
 
-http://localhost:8000/にアクセスし、laravelのwelcomeページが表示されるかを確認してください。
+http://localhost:8000/ にアクセスし、laravelのwelcomeページが表示されるかを確認してください。
 
+## 二段階認証の確認手順
+
+http://localhost:8000/ にアクセスし、画面右上のRegisterをクリック。任意のメールアドレスを登録してください。
+
+http://localhost:8000/two_factor_auth/login_form にアクセスし、登録したメールアドレスとパスワードを入力し送信
+
+http://localhost:8025/ にアクセスし、送信されたメールを開き4桁のパスワードをコピー
+
+http://localhost:8000/two_factor_auth/login_form にアクセスし、先程コピーしたパスワードをペーストして送信
+
+
+You're logged in!と画面に表示されていれば、ログインできています。
