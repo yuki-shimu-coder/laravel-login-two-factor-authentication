@@ -1,8 +1,13 @@
 version: '3'
+
+volumes:
+  db-volume:
+  maildir: {}
+
 services:
   app:
     container_name: app  
-    build: ./docker/php
+    build: ./php
     volumes:
       - .:/var/www
   nginx:
@@ -33,3 +38,13 @@ services:
       - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
+  mail:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - "8025:8025"
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /tmp
+    volumes:
+      - maildir:/tmp
