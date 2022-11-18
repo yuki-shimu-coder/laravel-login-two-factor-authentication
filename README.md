@@ -12,7 +12,7 @@ laravelで2段階認証を実装する
 laravel-projectディレクトリ内で、.envファイルを作成してください
 
 ```
-.env.example .env  
+cp .env.example .env  
 ```
 
 続いて、ルートディレクトリで下記のコマンドを実行してください
