@@ -30,7 +30,9 @@ docker compose up -d
 コンテナを起動したら、下記コマンドを実行してアプリの依存関係をインストールしてください
 
 ```
-docker compose exec app composer install
+docker compose exec app bash
+cd laravel-project
+composer install
 ```
 
 続いて、データベースを準備します。
