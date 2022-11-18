@@ -40,7 +40,7 @@ composer install
 下記コマンドを実行して、DBコンテナにアクセスし、DBを作成してください
 
 ```
-docker composer exec db bash
+docker compose exec db bash
 mysql -u  root -p
 パスワードはrootです
 CREATE DATABASE `laravel`;
